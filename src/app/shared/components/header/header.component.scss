@@ -1,0 +1,9 @@
+.header {
+    div {
+        @apply flex flex-row items-center;
+
+        a {
+            @apply mr-4;
+        }
+    }
+}
