@@ -1,0 +1,11 @@
+.footer {
+    @apply fixed bottom-0 flex justify-center;
+
+    span {
+        @apply flex items-center text-sm font-light;
+
+        i {
+            @apply mx-2;
+        }
+    }
+}
