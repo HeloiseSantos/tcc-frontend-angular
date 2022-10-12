@@ -16,7 +16,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   createProduct(): void {
-    console.log('Produto criado');
+    console.log('Produto criado!');
   }
 
   cancel(): void {
