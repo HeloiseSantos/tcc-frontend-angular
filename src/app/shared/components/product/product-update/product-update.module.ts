@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { ProductUpdateComponent } from './product-update.component';
 
@@ -8,7 +10,9 @@ import { ProductUpdateComponent } from './product-update.component';
     ProductUpdateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [
     ProductUpdateComponent
