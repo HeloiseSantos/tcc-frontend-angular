@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
 import { ProductCrudComponent } from './modules/product-crud/product-crud.component';
 import { ProductCreateComponent } from './shared/components/product/product-create/product-create.component';
+import { ProductDeleteComponent } from './shared/components/product/product-delete/product-delete.component';
+import { ProductUpdateComponent } from './shared/components/product/product-update/product-update.component';
 
 const routes: Routes = [
   {
@@ -44,14 +46,32 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: "products/update/:id",
-  //   component: ProductUpdateComponent
-  // },
-  // {
-  //   path: "products/delete/:id",
-  //   component: ProductDeleteComponent
-  // }
+  {
+    path: '',
+    component: ProductUpdateComponent,
+    children: [
+      {
+        path: 'products/update/:id',
+        loadChildren: () =>
+          import('src/app/shared/components/product/product-update/product-update.module').then(
+            (m) => m.ProductUpdateModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '',
+    component: ProductDeleteComponent,
+    children: [
+      {
+        path: 'products/delete/:id',
+        loadChildren: () =>
+          import('src/app/shared/components/product/product-delete/product-delete.module').then(
+            (m) => m.ProductDeleteModule
+          ),
+      },
+    ],
+  }
 ];
 
 @NgModule({
