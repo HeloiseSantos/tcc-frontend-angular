@@ -9,6 +9,7 @@ import { FooterModule } from './shared/components/footer/footer.module';
 import { MenuModule } from './shared/components/menu/menu.module';
 import { HomeModule } from './modules/home/home.module';
 import { ProductCrudModule } from './modules/product-crud/product-crud.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductCrudModule } from './modules/product-crud/product-crud.module';
     FooterModule,
     MenuModule,
     HomeModule,
-    ProductCrudModule
+    ProductCrudModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
