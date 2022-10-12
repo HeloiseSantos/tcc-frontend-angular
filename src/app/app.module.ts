@@ -8,6 +8,7 @@ import { HeaderModule } from './shared/components/header/header.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { MenuModule } from './shared/components/menu/menu.module';
 import { HomeModule } from './modules/home/home.module';
+import { ProductCrudModule } from './modules/product-crud/product-crud.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeModule } from './modules/home/home.module';
     HeaderModule,
     FooterModule,
     MenuModule,
-    HomeModule
+    HomeModule,
+    ProductCrudModule
   ],
   providers: [],
   bootstrap: [AppComponent]
