@@ -1,0 +1,12 @@
+.home-card {
+    @apply block mx-auto max-w-3xl rounded-lg text-center mt-10;
+
+    &__title {
+        @apply text-4xl font-normal;
+    }
+
+    &__subtitle {
+
+        @apply text-xl;
+    }
+}
