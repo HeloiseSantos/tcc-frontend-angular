@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
 import { ProductCrudComponent } from './modules/product-crud/product-crud.component';
 import { ProductCreateComponent } from './shared/components/product/product-create/product-create.component';
-import { ProductDeleteComponent } from './shared/components/product/product-delete/product-delete.component';
 import { ProductUpdateComponent } from './shared/components/product/product-update/product-update.component';
+import { ProductDeleteComponent } from './shared/components/product/product-delete/product-delete.component';
 
 const routes: Routes = [
   {

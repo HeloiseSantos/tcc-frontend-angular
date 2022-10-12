@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { ProductCreateComponent } from './product-create.component';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+
+import { ProductCreateComponent } from './product-create.component';
 
 @NgModule({
   declarations: [
