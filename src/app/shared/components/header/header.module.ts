@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header.component';
+import { MenuModule } from '../menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HeaderComponent } from './header.component';
   imports: [
     CommonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MenuModule
   ],
   exports: [
     HeaderComponent

@@ -1,7 +1,21 @@
 <mat-toolbar class="header">
-    <div>
-        <a routerLink="/">
-            <span>Logo App</span>
-        </a>
+    <div class="header-itens">
+        <app-menu></app-menu>
+
+        <div class="header-itens__logo">
+            <a routerLink="/">
+                <span>Mabruhe Chateau</span>
+            </a>
+        </div>
+
+        <div class="header-itens__title">
+            <a>
+                <i class="material-icons">
+                    home
+                </i>
+
+                Home
+            </a>
+        </div>
     </div>
 </mat-toolbar>

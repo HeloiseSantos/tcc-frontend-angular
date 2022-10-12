@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './shared/components/header/header.module';
 import { FooterModule } from './shared/components/footer/footer.module';
-import { NavigationModule } from './shared/components/navigation/navigation.module';
+import { MenuModule } from './shared/components/menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { NavigationModule } from './shared/components/navigation/navigation.modu
     BrowserAnimationsModule,
     HeaderModule,
     FooterModule,
-    NavigationModule
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
