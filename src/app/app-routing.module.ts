@@ -6,16 +6,43 @@ import { ProductCreateComponent } from './shared/components/product/product-crea
 
 const routes: Routes = [
   {
-    path: "",
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('src/app/modules/home/home.module').then(
+            (m) => m.HomeModule
+          ),
+      },
+    ],
   },
   {
-    path: "products",
-    component: ProductCrudComponent
+    path: '',
+    component: ProductCrudComponent,
+    children: [
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('src/app/modules/product-crud/product-crud.module').then(
+            (m) => m.ProductCrudModule
+          ),
+      },
+    ],
   },
   {
-    path: "products/create",
-    component: ProductCreateComponent
+    path: '',
+    component: ProductCreateComponent,
+    children: [
+      {
+        path: 'products/create',
+        loadChildren: () =>
+          import('src/app/shared/components/product/product-create/product-create.module').then(
+            (m) => m.ProductCreateModule
+          ),
+      },
+    ],
   },
   // {
   //   path: "products/update/:id",
