@@ -1,0 +1,11 @@
+.toolbar-title {
+    @apply bg-transparent justify-center border-b border-b-fuchsia-700;
+
+    &__link {
+        @apply flex items-center;
+
+        i {
+            @apply mr-2;
+        }
+    }
+}

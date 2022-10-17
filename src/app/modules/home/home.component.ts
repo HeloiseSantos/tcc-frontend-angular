@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageTitleService } from 'src/app/shared/components/page-title/page-title.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pageTitleService: PageTitleService
+  ) {
+    pageTitleService.headerData = {
+      title: 'Home',
+      icon: 'home',
+      routeUrl: ''
+    }
+  }
 
   ngOnInit(): void {
   }
