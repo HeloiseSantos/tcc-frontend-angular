@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 
 import { ProductReadComponent } from './product-read.component';
 
@@ -8,7 +9,8 @@ import { ProductReadComponent } from './product-read.component';
     ProductReadComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule,
   ],
   exports: [
     ProductReadComponent

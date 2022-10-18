@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 import { ProductCrudComponent } from './product-crud.component';
+import { ProductReadModule } from 'src/app/shared/components/product/product-read/product-read.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +11,8 @@ import { ProductCrudComponent } from './product-crud.component';
   ],
   imports: [
     CommonModule,
-    MatButtonModule
-    
+    MatButtonModule,
+    ProductReadModule
   ],
   exports: [
     ProductCrudComponent
