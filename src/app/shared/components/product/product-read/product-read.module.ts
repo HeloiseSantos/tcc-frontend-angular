@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { ProductReadComponent } from './product-read.component';
 
@@ -14,7 +15,8 @@ import { ProductReadComponent } from './product-read.component';
     CommonModule,
     MatTableModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   exports: [
     ProductReadComponent
