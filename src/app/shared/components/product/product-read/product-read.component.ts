@@ -17,7 +17,8 @@ export class ProductReadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe(products => {
+      this.products = products;
+    })
   }
-
 }
