@@ -34,8 +34,15 @@ export class ProductService {
     );
   }
 
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${environment.api}/wines`, product).pipe(
+      map((obj) => obj),
+      catchError((error) => this.errorHandler(error))
+    );
+  }
+
   errorHandler(error: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
-    return EMPTY
+    return EMPTY;
   }
 }
