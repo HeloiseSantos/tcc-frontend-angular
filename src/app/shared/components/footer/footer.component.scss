@@ -1,11 +1,19 @@
 .footer {
-    @apply fixed bottom-0 flex justify-center;
+    @apply fixed bottom-0 flex justify-center bg-secondaryColor;
 
-    span {
-        @apply flex items-center text-sm font-light;
+    &-itens {
+        @apply text-center text-sm font-light text-textColor;
+        
+        &__made {
+            @apply flex items-center mb-0;
 
-        i {
-            @apply mx-2;
+            mat-icon {
+                @apply mx-1;
+            }
+        }
+
+        &__version {
+            @apply mb-0;
         }
     }
 }
