@@ -1,19 +1,11 @@
 .header {
+    @apply bg-primaryColor;
+
     &-itens {
         @apply flex flex-row items-center mr-5;
 
         &__logo {
-            @apply flex flex-row items-center mr-5;
-        }
-
-        &__title {
-            a {
-                @apply flex items-end text-base;
-    
-                i {
-                    @apply mr-2 text-lg;
-                }
-            }
+            @apply text-tertiaryColor flex flex-row items-center mr-5;
         }
     }
 }
