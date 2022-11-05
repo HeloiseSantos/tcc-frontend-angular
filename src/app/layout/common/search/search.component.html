@@ -18,7 +18,7 @@
             class="w-full h-full px-16 sm:px-18"
             [formControl]="searchControl"
             [matAutocomplete]="matAutocomplete"
-            [placeholder]="'Search...'"
+            [placeholder]="'O que deseja pesquisar?'"
             (keydown)="onKeydown($event)"
             #barSearchInput>
         <mat-autocomplete
@@ -29,7 +29,7 @@
             <mat-option
                 class="py-0 px-6 text-md pointer-events-none text-secondary bg-transparent"
                 *ngIf="resultSets && !resultSets.length">
-                No results found!
+                Nenhum resultado encontrado!
             </mat-option>
             <ng-container *ngFor="let resultSet of resultSets; trackBy: trackByFn">
                 <mat-optgroup class="flex items-center mt-2 px-2">
@@ -76,7 +76,7 @@
                 matInput
                 [formControl]="searchControl"
                 [matAutocomplete]="matAutocomplete"
-                [placeholder]="'Search...'"
+                [placeholder]="'O que deseja pesquisar?'"
                 (keydown)="onKeydown($event)">
         </mat-form-field>
         <mat-autocomplete
@@ -87,7 +87,7 @@
             <mat-option
                 class="py-0 px-6 text-md pointer-events-none text-secondary bg-transparent"
                 *ngIf="resultSets && !resultSets.length">
-                No results found!
+                Nenhum resultado encontrado!
             </mat-option>
             <ng-container *ngFor="let resultSet of resultSets; trackBy: trackByFn">
                 <mat-optgroup class="flex items-center mt-2 px-2">
