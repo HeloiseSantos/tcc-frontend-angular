@@ -8,7 +8,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:home',
         link : '/home'
-    }
+    },
+    {
+        id   : 'produtos',
+        title: 'Produtos',
+        type : 'basic',
+        icon : 'heroicons_outline:shopping-cart',
+        link : '/produtos'
+    },
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
