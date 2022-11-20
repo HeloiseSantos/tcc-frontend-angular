@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductReadComponent } from './product-read/product-read.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
@@ -18,6 +21,8 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     ProductRoutingModule,
     CommonModule,
     RouterModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class ProductModule { }

@@ -1,1 +1,33 @@
-<p>product-read works!</p>
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 pb-22 sm:pt-12 sm:pb-28 sm:px-10 bg-default dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <div class="mb-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Produtos
+                </h2>
+            </div>
+
+            <div class="hidden sm:flex flex-wrap items-center text-md font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Você está em:</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <a class="ml-1 text-primary-500">Produtos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
+            <button mat-raised-button routerLink="/product/create" color="primary" aria-label="Botão para adicionar novo item">
+                <mat-icon class="icon-size-5 text-secondary mr-2" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
+                Novo
+            </button>
+        </div>
+    </div>
+
+    <div class="flex-auto -mt-16 p-6 sm:p-10 shadow bg-card">
+        <div class="min-h-min max-h-full rounded-2xl">
+            
+        </div>
+    </div>
+</div>

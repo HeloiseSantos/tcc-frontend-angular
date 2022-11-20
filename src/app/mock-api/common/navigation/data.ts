@@ -14,7 +14,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: 'Produtos',
         type : 'basic',
         icon : 'heroicons_outline:shopping-cart',
-        link : '/produtos'
+        link : '/product'
     },
 ];
 export const compactNavigation: FuseNavigationItem[] = [
