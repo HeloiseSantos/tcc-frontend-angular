@@ -29,7 +29,7 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy
         private _navigationService: NavigationService,
         private _userService: UserService,
         private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private _fuseNavigationService: FuseNavigationService
+        private _fuseNavigationService: FuseNavigationService,
     )
     {
     }
@@ -108,5 +108,9 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy
             // Toggle the opened status
             navigation.toggle();
         }
+    }
+
+    signOut(): void {
+        this._router.navigate(['/sign-out']);
     }
 }
