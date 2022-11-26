@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
+import { ProductModel } from './models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,13 @@ export class ProductService {
     private _httpClient: HttpClient
   ) { }
 
-  getAll(): Promise<any> {
+  getAll(): Promise<HttpResponse<ProductModel[]>> {
     return new Promise((resolve, reject) => {
-      this._httpClient.get(`${environment.api}/wines`).subscribe((retorno) => {
-        return resolve(retorno);
-      })
+      this._httpClient.get(`${environment.api}/wines`, { observe: 'response' })
+        .subscribe({
+          next: (response: HttpResponse<ProductModel[]>) => resolve(response),
+          error: (error: HttpErrorResponse) => reject(error)
+        });
     });
   }
-
-  // getAll(): Observable<Product[]> {
-  //   return this.http.get<Product[]>(`${environment.api}/wines`).pipe(
-  //     map((obj) => obj),
-  //     catchError((error) => this.errorHandler(error))
-  //   );
-  // }
 }
