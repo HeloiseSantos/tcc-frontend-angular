@@ -21,4 +21,14 @@ export class ProductService {
         });
     });
   }
+
+  create(product: ProductModel): Promise<HttpResponse<any>> {
+    return new Promise((resolve, reject) => {
+      this._httpClient.post(`${environment.api}/wines`, product, { observe: 'response' })
+        .subscribe({
+          next: (response: HttpResponse<any>) => resolve(response),
+          error: (error: HttpErrorResponse) => reject(error)
+        });
+    });
+  }
 }
