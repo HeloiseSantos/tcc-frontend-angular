@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { ToastSharedService } from 'app/shared/services/toast-shared.service';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ProductReadComponent implements OnInit {
 
   constructor(
     private _service: ProductService, 
-    // private _toast: ToastSharedService
+    private _toast: ToastSharedService
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -23,10 +24,10 @@ export class ProductReadComponent implements OnInit {
       if((response.body || []).length > 0) {
         this.dataSource = new MatTableDataSource(response.body);
       } else {
-        // this._toast.openWarning('Dados não encontrados');
+        this._toast.openWarning('Dados não encontrados!');
       }
     } catch (error) {
-      // this._toast.openError('Falha ao carregar programas habitacionais');
+      this._toast.openError('Falha ao carregar dados!');
     }
   }
 

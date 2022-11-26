@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
+import { ToastSharedService } from 'app/shared/services/toast-shared.service';
 
 
 @NgModule({
@@ -45,6 +46,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     // CurrencyMaskModule,
     MatSelectModule,
-  ]
+  ],
+  providers: [
+    ToastSharedService
+]
 })
 export class ProductModule { }
