@@ -20,6 +20,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { ToastSharedService } from 'app/shared/services/toast-shared.service';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+// import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
 
 @NgModule({
@@ -46,6 +49,9 @@ import { ToastSharedService } from 'app/shared/services/toast-shared.service';
     MatDividerModule,
     // CurrencyMaskModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    // MatMomentDateModule,
   ],
   providers: [
     ToastSharedService

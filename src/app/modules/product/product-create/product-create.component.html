@@ -56,8 +56,19 @@
 
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Data de fabricação</mat-label>
-                        <input matInput formControlName="manufacturingDate" placeholder="DD/MM/AAAA">
+                        <input matInput [matDatepicker]="manufacturingDate" formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly (click)="manufacturingDate.open()" class="cursor-pointer">
+                        <mat-datepicker-toggle matSuffix [for]="manufacturingDate"></mat-datepicker-toggle>
+                        <mat-datepicker #manufacturingDate></mat-datepicker>
                     </mat-form-field>
+
+                    <!-- <mat-form-field appearance="fill">
+                        <mat-label>Data contratação</mat-label>
+                        <input matInput [matDatepicker]="dataContratacao" formControlName="dataContratacao"
+                            placeholder="Data contratação" readonly (click)="dataContratacao.open()"
+                            class="cursor-pointer">
+                        <mat-datepicker-toggle matSuffix [for]="dataContratacao"></mat-datepicker-toggle>
+                        <mat-datepicker #dataContratacao></mat-datepicker>
+                    </mat-form-field> -->
 
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Preço unitário</mat-label>
