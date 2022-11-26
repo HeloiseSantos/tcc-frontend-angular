@@ -75,8 +75,12 @@
                             </button>
 
                             <mat-menu #contextMenu>
-                                <button mat-menu-item routerLink="/programa-habitacional/editar/{{element.id}}">
+                                <button mat-menu-item routerLink="/product/update/{{element._id}}">
                                     Editar
+                                </button>
+                                
+                                <button mat-menu-item routerLink="/product/delete/{{element._id}}">
+                                    Excluir
                                 </button>
                             </mat-menu>
                         </td>
