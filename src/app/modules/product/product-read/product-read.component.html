@@ -37,9 +37,9 @@
             
             <div class="rounded-md border border-gray-300 bg-card">
                 <table mat-table [dataSource]="dataSource" class="bg-transparent w-full">
-                    <ng-container matColumnDef="id">
+                    <ng-container matColumnDef="_id">
                         <th mat-header-cell *matHeaderCellDef> ID </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+                        <td mat-cell *matCellDef="let element"> {{ element._id }} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="name">
@@ -54,7 +54,7 @@
 
                     <ng-container matColumnDef="manufacturingDate">
                         <th mat-header-cell *matHeaderCellDef> FABRICAÇÃO </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.manufacturingDate | date: "dd/MM/yyyy HH:mm:ss" }} </td>
+                        <td mat-cell *matCellDef="let element"> {{ element.manufacturingDate | date: "dd/MM/yyyy" }} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="unitPrice">

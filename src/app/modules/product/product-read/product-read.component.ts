@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-read.component.scss']
 })
 export class ProductReadComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'type', 'manufacturingDate', 'unitPrice', 'quantityProduced', 'action'];
+  displayedColumns: string[] = ['_id', 'name', 'type', 'manufacturingDate', 'unitPrice', 'quantityProduced', 'action'];
   dataSource: any = new MatTableDataSource([]);
 
   constructor(
