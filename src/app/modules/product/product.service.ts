@@ -52,9 +52,9 @@ export class ProductService {
     });
   }
 
-  delete(product: ProductModel): Promise<HttpResponse<any>> {
+  delete(id: number): Promise<HttpResponse<any>> {
     return new Promise((resolve, reject) => {
-      this._httpClient.delete(`${environment.api}/wines/${product.id}`, { observe: 'response' })
+      this._httpClient.delete(`${environment.api}/wines/${id}`, { observe: 'response' })
         .subscribe({
           next: (response: HttpResponse<any>) => resolve(response),
           error: (error: HttpErrorResponse) => reject(error)
