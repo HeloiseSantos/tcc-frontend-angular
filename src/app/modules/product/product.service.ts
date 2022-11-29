@@ -22,7 +22,7 @@ export class ProductService {
     });
   }
 
-  getById(id: number): Promise<HttpResponse<ProductModel>> {
+  getById(id: string): Promise<HttpResponse<ProductModel>> {
     return new Promise((resolve, reject) => {
       this._httpClient.get(`${environment.api}/wines/${id}`, { observe: 'response' })
         .subscribe({
@@ -42,7 +42,7 @@ export class ProductService {
     });
   }
 
-  update(product: ProductModel): Promise<HttpResponse<any>> {
+  update(product: ProductModel): Promise<HttpResponse<ProductModel>> {
     return new Promise((resolve, reject) => {
       this._httpClient.put(`${environment.api}/wines/${product.id}`, product, { observe: 'response' })
         .subscribe({
