@@ -12,10 +12,21 @@ import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
 import { appRoutes } from 'app/app.routing';
+import { CurrencyMaskConfig, CurrencyMaskModule, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
+};
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+    align: "left",
+    allowNegative: false,
+    decimal: ",",
+    precision: 2,
+    prefix: "R$ ",
+    suffix: "",
+    thousands: "."
 };
 
 @NgModule({
@@ -39,10 +50,15 @@ const routerConfig: ExtraOptions = {
         LayoutModule,
 
         // 3rd party modules that require global configuration via forRoot
-        MarkdownModule.forRoot({})
+        MarkdownModule.forRoot({}),
+
+        CurrencyMaskModule
     ],
     bootstrap   : [
         AppComponent
+    ],
+    providers: [
+        { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
     ]
 })
 export class AppModule

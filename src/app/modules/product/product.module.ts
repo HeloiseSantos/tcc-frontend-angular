@@ -22,8 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ToastSharedService } from 'app/shared/services/toast-shared.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-// import { MatMomentDateModule } from "@angular/material-moment-adapter";
-
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -47,11 +46,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatMenuModule,
     MatSlideToggleModule,
     MatDividerModule,
-    // CurrencyMaskModule,
+    CurrencyMaskModule,
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    // MatMomentDateModule,
   ],
   providers: [
     ToastSharedService
