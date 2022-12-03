@@ -47,11 +47,13 @@
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Nome</mat-label>
                         <input matInput formControlName="name" placeholder="Nome">
+                        <mat-error>Preenchimento obrigatório</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Tipo</mat-label>
                         <input matInput formControlName="type" placeholder="Tipo">
+                        <mat-error>Preenchimento obrigatório</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="w-full" appearance="fill">
@@ -59,16 +61,19 @@
                         <input matInput [matDatepicker]="manufacturingDate" formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly (click)="manufacturingDate.open()" class="cursor-pointer">
                         <mat-datepicker-toggle matSuffix [for]="manufacturingDate"></mat-datepicker-toggle>
                         <mat-datepicker #manufacturingDate></mat-datepicker>
+                        <mat-error>Preenchimento obrigatório</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Preço unitário</mat-label>
                         <input matInput currencyMask formControlName="unitPrice" placeholder="R$ 0,00">
+                        <mat-error>Preenchimento obrigatório</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="w-full" appearance="fill">
                         <mat-label>Quantidade produzida</mat-label>
                         <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number">
+                        <mat-error>Preenchimento obrigatório</mat-error>
                     </mat-form-field>
                 </div>
             </form>
