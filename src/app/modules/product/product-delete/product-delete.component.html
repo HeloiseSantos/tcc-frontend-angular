@@ -1,39 +1,39 @@
 <div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
-    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between px-10 py-8 bg-card">
-        <div class="flex-1 min-w-0">
-            <div class="mb-2">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
-                    Produtos
-                </h2>
-            </div>
+    <div class="flex flex-row items-center justify-between px-10 py-6 bg-card">
+        <div>
+            <h2 class="text-4xl font-extrabold tracking-tight leading-10 mb-2">
+                Produtos
+            </h2>
 
-            <div class="hidden sm:flex flex-wrap items-center text-md font-medium">
+            <div class="flex flex-wrap items-center text-md font-medium text-primary-500">
                 <div>
-                    <a class="whitespace-nowrap text-primary-500">Você está em:</a>
+                    <a>Você está em:</a>
                 </div>
-                <div class="flex items-center ml-1 whitespace-nowrap">
-                    <a class="ml-1 text-primary-500" routerLink="/product">Produtos</a>
+
+                <div cclass="ml-1">
+                    <a routerLink="/product">Produtos</a>
                 </div>
-                <div class="flex items-center ml-1 whitespace-nowrap">
+
+                <div class="flex items-center ml-1">
                     <mat-icon
-                        class="icon-size-5 text-secondary"
+                        class="icon-size-5"
                         [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
-                    <a class="ml-1 text-primary-500">Excluir</a>
+                    <a class="ml-1">Excluir</a>
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-row shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
+        <div class="flex flex-row items-center">
             <div class="mr-4">
-                <button mat-stroked-button routerLink="/product">
-                    <mat-icon class="icon-size-5 text-secondary mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
+                <button mat-stroked-button routerLink="/product" aria-label="Botão para voltar">
+                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
                     Voltar
                 </button>
             </div>
 
             <div>
                 <button mat-raised-button color="warn" aria-label="Botão para salvar novo item" (click)="save()">
-                    <mat-icon class="icon-size-5 text-secondary mr-2" [svgIcon]="'heroicons_solid:save'"></mat-icon>
+                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:save'"></mat-icon>
                     Excluir
                 </button>
             </div>
@@ -41,35 +41,33 @@
     </div>
 
     <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
-        <div class="min-h-min max-h-full rounded-2xl">
-            <form class="text-center bg-card rounded-md border border-gray-300 px-8 pt-8 pb-6" [formGroup]="form" autocomplete="off">
-                <div class="grid grid-cols-3 gap-4">
-                    <mat-form-field class="w-full" appearance="fill">
-                        <mat-label>Nome</mat-label>
-                        <input matInput formControlName="name" placeholder="Nome" readonly="true">
-                    </mat-form-field>
+        <form class="text-center bg-card rounded-md border border-gray-300 px-8 pt-8 pb-6" [formGroup]="form" autocomplete="off">
+            <div class="grid grid-cols-3 gap-4">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="name" placeholder="Nome" readonly="true">
+                </mat-form-field>
 
-                    <mat-form-field class="w-full" appearance="fill">
-                        <mat-label>Tipo</mat-label>
-                        <input matInput formControlName="type" placeholder="Tipo" readonly="true">
-                    </mat-form-field>
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput formControlName="type" placeholder="Tipo" readonly="true">
+                </mat-form-field>
 
-                    <mat-form-field class="w-full" appearance="fill">
-                        <mat-label>Data de fabricação</mat-label>
-                        <input matInput formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly="true">
-                    </mat-form-field>
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Data de fabricação</mat-label>
+                    <input matInput formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly="true">
+                </mat-form-field>
 
-                    <mat-form-field class="w-full" appearance="fill">
-                        <mat-label>Preço unitário</mat-label>
-                        <input matInput formControlName="unitPrice" placeholder="R$ 0,00" type="number" readonly="true">
-                    </mat-form-field>
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Preço unitário</mat-label>
+                    <input matInput formControlName="unitPrice" placeholder="R$ 0,00" type="number" readonly="true">
+                </mat-form-field>
 
-                    <mat-form-field class="w-full" appearance="fill">
-                        <mat-label>Quantidade produzida</mat-label>
-                        <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number" readonly="true">
-                    </mat-form-field>
-                </div>
-            </form>
-        </div>
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Quantidade produzida</mat-label>
+                    <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number" readonly="true">
+                </mat-form-field>
+            </div>
+        </form>
     </div>
 </div>
