@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from 'app/shared/shared.module';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 
@@ -20,6 +21,7 @@ import { SearchComponent } from 'app/layout/common/search/search.component';
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
+        MatTooltipModule,
         SharedModule
     ],
     exports     : [
