@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
@@ -58,6 +58,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
         AppComponent
     ],
     providers: [
+        { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+        { provide: LOCALE_ID, useValue: 'pt' },
         { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
     ]
 })

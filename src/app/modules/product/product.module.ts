@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +23,9 @@ import { ToastSharedService } from 'app/shared/services/toast-shared.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt)
 
 @NgModule({
   declarations: [
@@ -52,7 +55,11 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     MatNativeDateModule,
   ],
   providers: [
-    ToastSharedService
+    ToastSharedService,
+    {
+      provide: LOCALE_ID, 
+      useValue: "pt-BR"
+    }
 ]
 })
 export class ProductModule { }
