@@ -42,7 +42,7 @@ export class ProductCreateComponent implements OnInit {
       this._toast.openSuccess('Produto adicionado com sucesso!');
       this._router.navigate(['/product']);
     } catch (error) {
-      this._toast.openError('Falha ao adicionar produto. Tente novamente!');
+      this._toast.openError('Falha ao adicionar produto. Por favor, tente novamente!');
     }
   }
 
@@ -52,7 +52,7 @@ export class ProductCreateComponent implements OnInit {
 
       this.create(data);
     } else {
-      this._toast.openError('Dados do formulário inválido. Revise os dados e tente novamente!');
+      this._toast.openError('Os dados do formulário estão inválidos! Revise-os e tente novamente!');
     }
   }
 }

@@ -61,7 +61,7 @@ export class ProductUpdateComponent implements OnInit {
       this._toast.openSuccess('Produto salvo com sucesso!');
       this._router.navigate(['/products']);
     } catch (error) {
-      this._toast.openError('Falha ao salvar produto. Por favor, tente novamente!');
+      this._toast.openError('Falha ao adicionar produto. Por favor, tente novamente!');
     }
   }
 
@@ -71,7 +71,7 @@ export class ProductUpdateComponent implements OnInit {
 
       this.update(data);
     } else {
-      this._toast.openError('Os dados do formulário estão inválidos. Por favor, revise-os e tente novamente!');
+      this._toast.openError('Os dados do formulário estão inválidos! Revise-os e tente novamente!');
     }
   }
 }
