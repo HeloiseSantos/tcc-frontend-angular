@@ -87,7 +87,7 @@ export class SearchMockApi
                     // Add to the results
                     results.push({
                         id     : 'contacts',
-                        label  : 'Contacts',
+                        label  : 'Contatos',
                         results: contactsResults
                     });
                 }
@@ -105,7 +105,7 @@ export class SearchMockApi
                     // Add to the results
                     results.push({
                         id     : 'pages',
-                        label  : 'Pages',
+                        label  : 'Páginas',
                         results: pagesResults
                     });
                 }
@@ -126,7 +126,7 @@ export class SearchMockApi
                     // Add to the results
                     results.push({
                         id     : 'tasks',
-                        label  : 'Tasks',
+                        label  : 'Tarefas',
                         results: tasksResults
                     });
                 }
