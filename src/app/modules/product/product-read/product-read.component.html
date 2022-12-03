@@ -1,99 +1,94 @@
 <div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
-    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between px-10 py-8 bg-card">
-        <div class="flex-1 min-w-0">
-            <div class="mb-2">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
-                    Produtos
-                </h2>
-            </div>
+    <div class="flex flex-row items-center justify-between px-10 py-6 bg-card">
+        <div>
+            <h2 class="text-4xl font-extrabold tracking-tight leading-10 mb-2">
+                Produtos
+            </h2>
 
-            <div class="hidden sm:flex flex-wrap items-center text-md font-medium">
+            <div class="flex flex-wrap items-center text-md font-medium text-primary-500">
                 <div>
-                    <a class="whitespace-nowrap text-primary-500">Você está em:</a>
+                    <a>Você está em:</a>
                 </div>
-                <div class="flex items-center ml-1 whitespace-nowrap">
-                    <a class="ml-1 text-primary-500">Produtos</a>
+
+                <div class="ml-1">
+                    <a>Produtos</a>
                 </div>
             </div>
         </div>
 
-        <div class="flex shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
-            <button mat-raised-button routerLink="/product/create" color="primary" aria-label="Botão para adicionar novo item">
-                <mat-icon class="icon-size-5 text-secondary mr-2" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
-                Novo
-            </button>
-        </div>
+        <button mat-raised-button routerLink="/product/create" color="primary" aria-label="Botão para adicionar novo item">
+            <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
+            Novo
+        </button>
     </div>
 
     <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
-        <div class="min-h-min max-h-full rounded-2xl">
-            <div class="grid grid-cols-4 gap-4">
-                <mat-form-field appearance="fill" class="w-full">
-                    <mat-label>Buscar vinho</mat-label>
-                    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar vinho" #input>
-                    <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
-                </mat-form-field>
-            </div>
-            
-            <div class="rounded-md border border-gray-300 bg-card">
-                <table mat-table [dataSource]="dataSource" class="bg-transparent w-full">
-                    <ng-container matColumnDef="_id">
-                        <th mat-header-cell *matHeaderCellDef> ID </th>
-                        <td mat-cell *matCellDef="let element"> {{ element._id }} </td>
-                    </ng-container>
+        <div class="grid grid-cols-4 gap-4">
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Buscar vinho</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar vinho" #input>
+                <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
+            </mat-form-field>
+        </div>
+        
+        <div class="rounded-md border border-gray-300 bg-card">
+            <table mat-table [dataSource]="dataSource" class="bg-transparent w-full">
+                <ng-container matColumnDef="_id">
+                    <th mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{ element._id }} </td>
+                </ng-container>
 
-                    <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> NOME </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
-                    </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> NOME </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+                </ng-container>
 
-                    <ng-container matColumnDef="type">
-                        <th mat-header-cell *matHeaderCellDef> TIPO </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.type }} </td>
-                    </ng-container>
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> TIPO </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.type }} </td>
+                </ng-container>
 
-                    <ng-container matColumnDef="manufacturingDate">
-                        <th mat-header-cell *matHeaderCellDef> FABRICAÇÃO </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.manufacturingDate }} </td>
-                    </ng-container>
+                <ng-container matColumnDef="manufacturingDate">
+                    <th mat-header-cell *matHeaderCellDef> FABRICAÇÃO </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.manufacturingDate }} </td>
+                </ng-container>
 
-                    <ng-container matColumnDef="unitPrice">
-                        <th mat-header-cell *matHeaderCellDef> PREÇO UNITÁRIO </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.unitPrice | currency }} </td>
-                    </ng-container>
+                <ng-container matColumnDef="unitPrice">
+                    <th mat-header-cell *matHeaderCellDef> PREÇO UNITÁRIO </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.unitPrice | currency }} </td>
+                </ng-container>
 
-                    <ng-container matColumnDef="quantityProduced">
-                        <th mat-header-cell *matHeaderCellDef> QUANTIDADE PRODUZIDA </th>
-                        <td mat-cell *matCellDef="let element"> {{ element.quantityProduced }} </td>
-                    </ng-container>
-                    
-                    <ng-container matColumnDef="action">
-                        <th mat-header-cell *matHeaderCellDef> AÇÃO </th>
-                        <td mat-cell *matCellDef="let element">
-                            <button mat-icon-button [matMenuTriggerFor]="contextMenu" aria-label="more">
-                                <mat-icon [svgIcon]="'heroicons_solid:dots-vertical'"></mat-icon>
+                <ng-container matColumnDef="quantityProduced">
+                    <th mat-header-cell *matHeaderCellDef> QUANTIDADE PRODUZIDA </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.quantityProduced }} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> AÇÃO </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button [matMenuTriggerFor]="contextMenu" aria-label="more">
+                            <mat-icon [svgIcon]="'heroicons_solid:dots-vertical'"></mat-icon>
+                        </button>
+
+                        <mat-menu #contextMenu>
+                            <button mat-menu-item routerLink="/product/update/{{element._id}}">
+                                Editar
                             </button>
 
-                            <mat-menu #contextMenu>
-                                <button mat-menu-item routerLink="/product/update/{{element._id}}">
-                                    Editar
-                                </button>
-
-                                <button mat-menu-item routerLink="/product/delete/{{element._id}}">
-                                    Excluir
-                                </button>
-                            </mat-menu>
-                        </td>
-                    </ng-container>
-                    
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    
-                    <tr class="mat-row" *matNoDataRow>
-                        <td class="mat-cell" colspan="4">Nenhum dado correspondente à consulta "{{input.value}}"</td>
-                    </tr>
-                </table>
-            </div>
+                            <button mat-menu-item routerLink="/product/delete/{{element._id}}">
+                                Excluir
+                            </button>
+                        </mat-menu>
+                    </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="8">Nenhum dado correspondente à consulta "{{input.value}}"</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
