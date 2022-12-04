@@ -1,0 +1,119 @@
+<div class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0">
+    <div class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l">
+        <svg class="absolute inset-0 pointer-events-none"
+            viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                <circle r="234" cx="196" cy="23"></circle>
+                <circle r="234" cx="790" cy="491"></circle>
+            </g>
+        </svg>
+
+        <div class="z-10 relative w-full max-w-2xl">
+            <div class="text-7xl font-bold leading-none text-gray-100">
+                <p>Bem vindo</p>
+                <p>ao SGV</p>
+            </div>
+
+            <p class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
+                Sistema de gerenciamento de vinícolas
+            </p>
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center md:justify-center w-full sm:w-auto md:h-full md:w-1/2 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
+        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+            <h2 class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Login</h2>
+            <div class="flex items-baseline mt-0.5 font-medium">
+                <p>Não possui uma conta?</p>
+                <a
+                    class="ml-1 text-primary-500 hover:underline"
+                    [routerLink]="['/sign-up']">Cadastrar-se
+                </a>
+            </div>
+
+            <fuse-alert
+                class="mt-8 -mb-4"
+                *ngIf="showAlert"
+                [appearance]="'outline'"
+                [showIcon]="false"
+                [type]="alert.type"
+                [@shake]="alert.type === 'error'">
+                {{alert.message}}
+            </fuse-alert>
+
+            <form
+                class="mt-8"
+                [formGroup]="signInForm"
+                #signInNgForm="ngForm">
+
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input
+                        id="email"
+                        matInput
+                        [formControlName]="'email'">
+                    <mat-error *ngIf="signInForm.get('email').hasError('required')">
+                        Preenchimento obrigatório
+                    </mat-error>
+                    <mat-error *ngIf="signInForm.get('email').hasError('email')">
+                        Por favor, insira um email válido
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input
+                        id="password"
+                        matInput
+                        type="password"
+                        [formControlName]="'password'"
+                        #passwordField>
+                    <button
+                        mat-icon-button
+                        type="button"
+                        (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+                        matSuffix>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'password'"
+                            [svgIcon]="'heroicons_solid:eye'"></mat-icon>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'text'"
+                            [svgIcon]="'heroicons_solid:eye-off'"></mat-icon>
+                    </button>
+                    <mat-error>
+                        Preenchimento obrigatório
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="inline-flex items-end justify-between w-full mt-1.5">
+                    <mat-checkbox
+                        [color]="'primary'"
+                        [formControlName]="'rememberMe'">
+                        Lembrar-me
+                    </mat-checkbox>
+                    <a
+                        class="text-md font-medium text-primary-500 hover:underline"
+                        [routerLink]="['/forgot-password']">Esqueceu sua senha?
+                    </a>
+                </div>
+
+                <button
+                    class="fuse-mat-button-large w-full mt-6"
+                    mat-flat-button
+                    [color]="'primary'"
+                    [disabled]="signInForm.disabled"
+                    (click)="signIn()">
+                    <span *ngIf="!signInForm.disabled">
+                        Entrar
+                    </span>
+                    <mat-progress-spinner
+                        *ngIf="signInForm.disabled"
+                        [diameter]="24"
+                        [mode]="'indeterminate'"></mat-progress-spinner>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

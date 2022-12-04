@@ -1,0 +1,73 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
+    <div class="flex flex-row items-center justify-between px-10 py-6 bg-card">
+        <div>
+            <h2 class="text-4xl font-extrabold tracking-tight leading-10 mb-2">
+                Produtos
+            </h2>
+
+            <div class="flex flex-wrap items-center text-md font-medium text-cyan-600">
+                <div>
+                    <a>Você está em:</a>
+                </div>
+
+                <div class="ml-1">
+                    <a routerLink="/product">Produtos</a>
+                </div>
+
+                <div class="flex items-center ml-1">
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
+                    <a class="ml-1">Excluir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-row items-center">
+            <div class="mr-4">
+                <button mat-button class="text-gray-600" routerLink="/product" aria-label="Botão para voltar">
+                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
+                    Voltar
+                </button>
+            </div>
+
+            <div>
+                <button mat-raised-button class="bg-red-600 text-white" aria-label="Botão para salvar novo item" (click)="save()">
+                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:x-circle'"></mat-icon>
+                    Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
+        <form class="text-center bg-card rounded-md border border-gray-300 px-8 pt-8 pb-6" [formGroup]="form" autocomplete="off">
+            <div class="grid grid-cols-3 gap-4">
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="name" placeholder="Nome" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput formControlName="type" placeholder="Tipo" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Data de fabricação</mat-label>
+                    <input matInput formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Preço unitário</mat-label>
+                    <input matInput formControlName="unitPrice" placeholder="R$ 0,00" type="number" readonly="true">
+                </mat-form-field>
+
+                <mat-form-field class="w-full" appearance="fill">
+                    <mat-label>Quantidade produzida</mat-label>
+                    <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number" readonly="true">
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

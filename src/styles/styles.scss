@@ -1,0 +1,58 @@
+/* Mat-table */
+.mat-header-cell.mat-column-action,
+.mat-cell.mat-column-action {
+    @apply w-20 text-center;
+}
+
+/* Inputs */
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Snackbar */
+.sucess-snack {
+    @apply bg-green-600 #{!important};
+
+    .mat-simple-snackbar {
+        @apply text-white;
+
+        .mat-simple-snackbar-action {
+            .mat-button-wrapper {
+                @apply text-white;
+            }
+        }
+    }
+}
+
+.warning-snack {
+    @apply bg-yellow-600 #{!important};
+
+    .mat-simple-snackbar {
+        @apply text-black;
+
+        .mat-simple-snackbar-action {
+            .mat-button-wrapper {
+                @apply text-black;
+            }
+        }
+    }
+}
+
+.error-snack {
+    @apply bg-red-600 #{!important};
+
+    .mat-simple-snackbar {
+        @apply text-white;
+
+        .mat-simple-snackbar-action {
+            .mat-button-wrapper {
+                @apply text-white;
+            }
+        }
+    }
+}
