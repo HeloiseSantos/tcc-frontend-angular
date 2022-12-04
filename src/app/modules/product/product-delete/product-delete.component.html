@@ -25,14 +25,14 @@
 
         <div class="flex flex-row items-center">
             <div class="mr-4">
-                <button mat-stroked-button color="primary" routerLink="/product" aria-label="Botão para voltar">
+                <button mat-button class="text-gray-600" routerLink="/product" aria-label="Botão para voltar">
                     <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
                     Voltar
                 </button>
             </div>
 
             <div>
-                <button mat-raised-button color="warn" aria-label="Botão para salvar novo item" (click)="save()">
+                <button mat-raised-button class="bg-red-600 text-white" aria-label="Botão para salvar novo item" (click)="save()">
                     <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:x-circle'"></mat-icon>
                     Excluir
                 </button>
