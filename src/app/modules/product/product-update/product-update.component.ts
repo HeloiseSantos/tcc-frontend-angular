@@ -47,6 +47,7 @@ export class ProductUpdateComponent implements OnInit {
 
   createForm(): UntypedFormGroup {
     return this._formBuilder.group({
+      _id: [],
       name: ['', [Validators.required]],
       type: ['', [Validators.required]],
       manufacturingDate: ['', [Validators.required]],
@@ -59,7 +60,7 @@ export class ProductUpdateComponent implements OnInit {
     try {
       await this._service.update({ ...data });
       this._toast.openSuccess('Produto salvo com sucesso!');
-      this._router.navigate(['/products']);
+      this._router.navigate(['/product']);
     } catch (error) {
       this._toast.openError('Falha ao adicionar produto. Por favor, tente novamente!');
     }
@@ -68,7 +69,6 @@ export class ProductUpdateComponent implements OnInit {
   save(){
     if(this.form.valid) {
       const data = this.form.getRawValue();
-
       this.update(data);
     } else {
       this._toast.openError('Os dados do formulário estão inválidos! Revise-os e tente novamente!');

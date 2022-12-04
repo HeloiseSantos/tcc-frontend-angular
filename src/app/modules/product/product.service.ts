@@ -44,7 +44,7 @@ export class ProductService {
 
   update(product: ProductModel): Promise<HttpResponse<ProductModel>> {
     return new Promise((resolve, reject) => {
-      this._httpClient.put(`${environment.api}/wines/${product.id}`, product, { observe: 'response' })
+      this._httpClient.put(`${environment.api}/wines/${product._id}`, product, { observe: 'response' })
         .subscribe({
           next: (response: HttpResponse<any>) => resolve(response),
           error: (error: HttpErrorResponse) => reject(error)
@@ -52,9 +52,9 @@ export class ProductService {
     });
   }
 
-  delete(id: number): Promise<HttpResponse<any>> {
+  delete(_id: string): Promise<HttpResponse<any>> {
     return new Promise((resolve, reject) => {
-      this._httpClient.delete(`${environment.api}/wines/${id}`, { observe: 'response' })
+      this._httpClient.delete(`${environment.api}/wines/${_id}`, { observe: 'response' })
         .subscribe({
           next: (response: HttpResponse<any>) => resolve(response),
           error: (error: HttpErrorResponse) => reject(error)

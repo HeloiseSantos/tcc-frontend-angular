@@ -47,6 +47,7 @@ export class ProductDeleteComponent implements OnInit {
 
   createForm(): UntypedFormGroup {
     return this._formBuilder.group({
+      _id: [],
       name: ['', [Validators.required]],
       type: ['', [Validators.required]],
       manufacturingDate: ['', [Validators.required]],
@@ -57,18 +58,17 @@ export class ProductDeleteComponent implements OnInit {
 
   async delete(data: any): Promise<void> {
     try {
-      await this._service.delete({ ...data });
-      this._toast.openSuccess('Produto salvo com sucesso!');
-      this._router.navigate(['/products']);
+      await this._service.delete(data._id);
+      this._toast.openSuccess('Produto deletado com sucesso!');
+      this._router.navigate(['/product']);
     } catch (error) {
-      this._toast.openError('Falha ao salvar produto. Por favor, tente novamente!');
+      this._toast.openError('Falha ao deletar produto. Por favor, tente novamente!');
     }
   }
 
   save(){
     if(this.form.valid) {
       const data = this.form.getRawValue();
-
       this.delete(data);
     } else {
       this._toast.openError('Os dados do formulário estão inválidos. Por favor, revise-os e tente novamente!');

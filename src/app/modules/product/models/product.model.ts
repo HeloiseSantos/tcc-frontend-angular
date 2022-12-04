@@ -1,5 +1,5 @@
 export class ProductModel {
-    id?: number;
+    _id?: number;
     name: string;
     type: string;
     manufacturingDate: string;
