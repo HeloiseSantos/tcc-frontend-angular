@@ -23,13 +23,11 @@
     </div>
 
     <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
-        <div class="grid grid-cols-4">
-            <mat-form-field appearance="fill" class="w-full">
-                <mat-label>Buscar vinho</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar vinho" #input>
-                <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
-            </mat-form-field>
-        </div>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Buscar produto</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o produto que deseja buscar" #input>
+            <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
+        </mat-form-field>
         
         <div class="rounded-md border border-gray-300 bg-card">
             <table mat-table [dataSource]="dataSource" class="bg-transparent w-full">
