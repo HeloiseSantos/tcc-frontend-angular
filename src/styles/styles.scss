@@ -4,6 +4,10 @@
     @apply w-20 text-center;
 }
 
+.mat-column-_id {
+    @apply w-72;
+}
+
 /* Inputs */
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
