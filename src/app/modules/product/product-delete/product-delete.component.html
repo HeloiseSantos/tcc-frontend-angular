@@ -39,12 +39,13 @@
 
                 <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Data de fabricação</mat-label>
-                    <input matInput formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly="true">
+                    <input matInput [matDatepicker]="manufacturingDate" formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly="true">
+                    <mat-datepicker #manufacturingDate></mat-datepicker>
                 </mat-form-field>
 
                 <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Preço unitário</mat-label>
-                    <input matInput formControlName="unitPrice" placeholder="R$ 0,00" type="number" readonly="true">
+                    <input matInput currencyMask formControlName="unitPrice" placeholder="R$ 0,00" readonly="true">
                 </mat-form-field>
 
                 <mat-form-field class="w-full" appearance="outline">
