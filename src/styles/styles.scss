@@ -1,4 +1,8 @@
 /* Mat-table */
+.mat-table {
+    @apply rounded-md overflow-hidden;
+}
+
 .mat-header-cell {
     @apply bg-gray-800 text-white #{!important};
 }
