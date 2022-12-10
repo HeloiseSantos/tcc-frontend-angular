@@ -24,11 +24,13 @@
                     [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
             </div>
             <div class="flex flex-col items-center justify-center w-full mt-4">
-                <div class="w-full whitespace-nowrap text-ellipsis overflow-hidden text-center leading-normal font-medium">
-                    {{user.name}}
+                <div class="flex items-center w-full whitespace-nowrap text-ellipsis overflow-hidden text-left text-md leading-normal font-medium text-secondary">
+                    <mat-icon [svgIcon]="'heroicons_outline:user-circle'" class="mr-2"></mat-icon>
+                    Usuário: {{user.name}}
                 </div>
-                <div class="w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary">
-                    {{user.email}}
+                <div class="flex items-center w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-left text-md leading-normal font-medium text-secondary">
+                    <mat-icon [svgIcon]="'heroicons_outline:identification'" class="mr-2"></mat-icon>
+                    Perfil: Administrador
                 </div>
             </div>
         </div>
@@ -44,12 +46,11 @@
         </button>
 
         <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
-            <search [appearance]="'bar'"></search>
-            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
             <button
                 mat-icon-button
                 (click)="signOut()"
                 matTooltip="Sair do sistema"
+                matTooltipPosition="left"
             >
                 <mat-icon class="mr-0" [svgIcon]="'heroicons_outline:logout'"></mat-icon>
             </button>
