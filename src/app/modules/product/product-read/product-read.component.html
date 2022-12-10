@@ -16,18 +16,22 @@
             </div>
         </div>
 
-        <button mat-raised-button routerLink="/product/create" class="bg-gray-700 text-white" aria-label="Botão para adicionar novo item">
-            <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
-            Novo
-        </button>
+        
     </div>
 
     <div class="flex-auto px-10 py-6 bg-default">
-        <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Buscar produto</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o produto que deseja buscar" #input>
-            <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
-        </mat-form-field>
+        <div class="flex items-center justify-between">
+            <mat-form-field appearance="fill" class="w-2/4">
+                <mat-label>Buscar produto</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o produto que deseja buscar" #input>
+                <mat-icon matSuffix [svgIcon]="'heroicons_solid:search'"></mat-icon>
+            </mat-form-field>
+
+            <button mat-raised-button routerLink="/product/create" class="bg-gray-800 text-white" aria-label="Botão para adicionar novo item">
+                <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
+                Cadastrar novo item
+            </button>
+        </div>
         
         <div class="rounded-md border border-gray-300">
             <table mat-table [dataSource]="dataSource" class="bg-white w-full">
