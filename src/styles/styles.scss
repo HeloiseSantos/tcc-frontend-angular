@@ -1,4 +1,8 @@
 /* Mat-table */
+.mat-header-cell {
+    @apply bg-gray-800 text-white #{!important};
+}
+
 .mat-header-cell.mat-column-action,
 .mat-cell.mat-column-action {
     @apply w-20 text-center;
