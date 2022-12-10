@@ -26,6 +26,10 @@ input[type=number] {
     appearance: textfield;
 }
 
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    @apply bg-white;
+}
+
 /* Snackbar */
 .sucess-snack {
     @apply bg-green-600 #{!important};

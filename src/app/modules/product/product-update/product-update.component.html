@@ -27,19 +27,19 @@
     <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
         <form class="text-center bg-card rounded-md border border-gray-300 px-8 pt-8 pb-6" [formGroup]="form" autocomplete="off">
             <div class="grid grid-cols-3 gap-4">
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Nome</mat-label>
                     <input matInput formControlName="name" placeholder="Nome">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Tipo</mat-label>
                     <input matInput formControlName="type" placeholder="Tipo">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Data de fabricação</mat-label>
                     <input matInput [matDatepicker]="manufacturingDate" formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly (click)="manufacturingDate.open()" class="cursor-pointer">
                     <mat-datepicker-toggle matSuffix [for]="manufacturingDate"></mat-datepicker-toggle>
@@ -47,13 +47,13 @@
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Preço unitário</mat-label>
                     <input matInput currencyMask formControlName="unitPrice" placeholder="R$ 0,00">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Quantidade produzida</mat-label>
                     <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number">
                     <mat-error>Preenchimento obrigatório</mat-error>
