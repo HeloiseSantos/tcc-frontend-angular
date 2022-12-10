@@ -64,3 +64,11 @@ input[type=number] {
         }
     }
 }
+
+/* Title pages */
+.bg-title-page {
+    background-image: url("../assets/images/wine.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
