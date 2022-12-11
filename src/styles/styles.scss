@@ -1,7 +1,19 @@
 /* Mat-table */
+.mat-table {
+    @apply rounded-md overflow-hidden;
+}
+
+.mat-header-cell {
+    @apply bg-gray-800 text-white #{!important};
+}
+
 .mat-header-cell.mat-column-action,
 .mat-cell.mat-column-action {
     @apply w-20 text-center;
+}
+
+.mat-column-_id {
+    @apply w-72;
 }
 
 /* Inputs */
@@ -12,6 +24,10 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    @apply bg-white;
 }
 
 /* Snackbar */
@@ -55,4 +71,12 @@ input[type=number] {
             }
         }
     }
+}
+
+/* Title pages */
+.bg-title-page {
+    background-image: url("../assets/images/wine.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }

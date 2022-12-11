@@ -7,7 +7,7 @@
     [navigation]="navigation.default"
     [opened]="!isScreenSmall">
     <ng-container fuseVerticalNavigationContentHeader>
-        <div class="flex items-center justify-center w-full px-4 py-4 pl-6 border-b border-gray-700 font-medium text-xl">
+        <div class="flex items-center justify-center w-full px-4 py-4 pl-6 border-b border-gray-700 font-medium text-xl text-secondary">
             <a routerLink="/">Mabruhe Chateau</a>
         </div>
 
@@ -24,11 +24,11 @@
                     [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
             </div>
             <div class="flex flex-col items-center justify-center w-full mt-4">
-                <div class="w-full whitespace-nowrap text-ellipsis overflow-hidden text-center leading-normal font-medium">
-                    {{user.name}}
+                <div class="w-full whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary">
+                    Usuário: {{user.name}}
                 </div>
                 <div class="w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary">
-                    {{user.email}}
+                    Perfil: Administrador
                 </div>
             </div>
         </div>
@@ -44,12 +44,11 @@
         </button>
 
         <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
-            <search [appearance]="'bar'"></search>
-            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
             <button
                 mat-icon-button
                 (click)="signOut()"
                 matTooltip="Sair do sistema"
+                matTooltipPosition="left"
             >
                 <mat-icon class="mr-0" [svgIcon]="'heroicons_outline:logout'"></mat-icon>
             </button>
@@ -60,7 +59,7 @@
         <router-outlet *ngIf="true"></router-outlet>
     </div>
 
-    <div class="relative flex flex-0 items-center justify-center w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+    <div class="relative flex flex-0 items-center justify-center w-full h-14 px-4 md:px-6 z-49 border-t border-gray-300 bg-card dark:bg-transparent print:hidden">
         <span class="font-medium text-secondary">Mabruhe Chateau Vinícola &copy; {{currentYear}}</span>
     </div>
 </div>

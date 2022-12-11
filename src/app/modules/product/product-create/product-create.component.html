@@ -1,11 +1,11 @@
 <div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
-    <div class="flex flex-row items-center justify-between px-10 py-6 bg-card">
+    <div class="flex flex-row items-center justify-between p-10 bg-title-page">
         <div>
-            <h2 class="text-4xl font-extrabold tracking-tight leading-10 mb-2">
-                Produtos
+            <h2 class="text-5xl font-extrabold tracking-tight leading-10 mb-2 text-gray-100">
+                Cadastrar produto
             </h2>
 
-            <div class="flex flex-wrap items-center text-md font-medium text-cyan-600">
+            <div class="flex flex-wrap items-center text-md font-medium text-gray-300">
                 <div>
                     <a>Você está em:</a>
                 </div>
@@ -18,24 +18,8 @@
                     <mat-icon
                         class="icon-size-5"
                         [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
-                    <a class="ml-1">Novo</a>
+                    <a class="ml-1">Cadastrar</a>
                 </div>
-            </div>
-        </div>
-
-        <div class="flex flex-row items-center">
-            <div class="mr-4">
-                <button mat-button class="text-gray-600" routerLink="/product" aria-label="Botão para voltar">
-                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
-                    Voltar
-                </button>
-            </div>
-
-            <div>
-                <button mat-raised-button class="bg-cyan-600 text-white" aria-label="Botão para salvar novo item" (click)="save()">
-                    <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:save'"></mat-icon>
-                    Salvar
-                </button>
             </div>
         </div>
     </div>
@@ -43,19 +27,19 @@
     <div class="flex-auto px-10 py-8 bg-default border-t border-gray-200">
         <form class="text-center bg-card rounded-md border border-gray-300 px-8 pt-8 pb-6" [formGroup]="form" autocomplete="off">
             <div class="grid grid-cols-3 gap-4">
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Nome</mat-label>
                     <input matInput formControlName="name" placeholder="Nome">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Tipo</mat-label>
                     <input matInput formControlName="type" placeholder="Tipo">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Data de fabricação</mat-label>
                     <input matInput [matDatepicker]="manufacturingDate" formControlName="manufacturingDate" placeholder="DD/MM/AAAA" readonly (click)="manufacturingDate.open()" class="cursor-pointer">
                     <mat-datepicker-toggle matSuffix [for]="manufacturingDate"></mat-datepicker-toggle>
@@ -63,17 +47,33 @@
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Preço unitário</mat-label>
                     <input matInput currencyMask formControlName="unitPrice" placeholder="R$ 0,00">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="w-full" appearance="fill">
+                <mat-form-field class="w-full" appearance="outline">
                     <mat-label>Quantidade produzida</mat-label>
                     <input matInput formControlName="quantityProduced" placeholder="Quantidade produzida" type="number">
                     <mat-error>Preenchimento obrigatório</mat-error>
                 </mat-form-field>
+
+                <div class="flex flex-row items-center justify-center">
+                    <div class="mr-4">
+                        <button mat-button class="text-gray-600" routerLink="/product" aria-label="Botão para cancelar">
+                            <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
+                            Cancelar
+                        </button>
+                    </div>
+        
+                    <div>
+                        <button mat-raised-button class="bg-gray-800 text-white" aria-label="Botão para salvar novo item" (click)="save()">
+                            <mat-icon class="icon-size-5 mr-2" [svgIcon]="'heroicons_solid:save'"></mat-icon>
+                            Salvar produto
+                        </button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

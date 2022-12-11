@@ -23,13 +23,6 @@
     <div class="md:flex md:items-center md:justify-center w-full sm:w-auto md:h-full md:w-1/2 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <h2 class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Login</h2>
-            <div class="flex items-baseline mt-0.5 font-medium">
-                <p>Não possui uma conta?</p>
-                <a
-                    class="ml-1 text-primary-500 hover:underline"
-                    [routerLink]="['/sign-up']">Cadastrar-se
-                </a>
-            </div>
 
             <fuse-alert
                 class="mt-8 -mb-4"
@@ -86,18 +79,6 @@
                         Preenchimento obrigatório
                     </mat-error>
                 </mat-form-field>
-
-                <div class="inline-flex items-end justify-between w-full mt-1.5">
-                    <mat-checkbox
-                        [color]="'primary'"
-                        [formControlName]="'rememberMe'">
-                        Lembrar-me
-                    </mat-checkbox>
-                    <a
-                        class="text-md font-medium text-primary-500 hover:underline"
-                        [routerLink]="['/forgot-password']">Esqueceu sua senha?
-                    </a>
-                </div>
 
                 <button
                     class="fuse-mat-button-large w-full mt-6"
